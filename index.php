@@ -1,7 +1,8 @@
 <?php
-$test_1 = 7;
-$test_2 = 3;
+$height = '90';
 
-$test_3 = $test_1 % $test_2;
+var_dump($height);
 
-echo $test_3;
+if ($height === 90) {
+  echo '身長は' . $height . 'cmです。';
+}
