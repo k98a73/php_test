@@ -1,31 +1,49 @@
 <?php
 
-// switch
-// if分の方がいい 見やすい
-
-$data = 1;
-switch ($data) {
-  case $data === 1:
-    echo '1です';
-    break;
-  case 2:
-    echo '2です';
-    break;
-  case 3:
-    echo '3です';
-    break;
-  default:
-    echo '1〜3ではありません';
+// インプット引数 なし
+// アウトプット戻り値 なし
+function test() {
+  echo 'テスト';
 }
+
+test();
+
+// インプット引数 あり
+// アウトプット戻り値 なし
+
+$comment = 'コメント2';
+$comment3 = 'コメント3';
+
+function getComment($string) {
+  echo $string;
+}
+
+getComment($comment3);
 
 echo '<br>';
 
-if ($data === 1) {
-  echo '1';
+// インプット引数 なし
+// アウトプット戻り値 あり
+
+function getNumberOfComment() {
+  return 5;
 }
-if ($data === 2) {
-  echo '2';
+
+$commentNumber = getNumberOfComment();
+
+// echo getNumberOfComment();
+
+echo $commentNumber;
+
+echo '<br>';
+
+// 引数2つ
+// 戻り値あり
+
+function sumPrice($int1, $int2) {
+  $int3 = $int1 + $int2;
+  return $int3;
 }
-if ($data === 3) {
-  echo '3';
-}
+
+$total = sumPrice(3, 5);
+echo $total;
