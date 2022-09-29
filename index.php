@@ -1,42 +1,25 @@
 <?php
 
-// foreach
+// for 繰り返す数が決まっていたら
+// while 繰り返す数が決まっていなかったら
 
-$members = [
-  'name' => '本田',
-  'height' => 170,
-  'hobby' => 'サッカー',
-];
-
-// バリューのみ表示
-foreach ($members as $member) {
-  echo $member;
-}
-
-echo '<br>';
-
-// キーとバリューそれぞれ表示
-foreach ($members as $key => $value) {
-  echo $key . 'は' . $value . 'です。';
-}
-
-echo '<br>';
-
-$members_2 = [
-  '本田' => [
-    'height' => 170,
-    'hobby' => 'サッカー',
-  ],
-  '香川' => [
-    'height' => 165,
-    'hobby' => 'サッカー',
-  ],
-];
-
-// 多段階の配列を展開
-foreach ($members_2 as $member_1) {
-  foreach ($member_1 as $member => $value) {
-    echo $member . 'は' . $value . 'です。';
-    echo '<br>';
+// continue, break
+for ($i = 0; $i < 10; $i++) {
+  if ($i === 5) {
+    // break;
+    // continue;
   }
+  echo $i;
 }
+
+echo '<br>';
+
+$j = 0;
+while ($j < 5) {
+  echo $j;
+  $j++;
+}
+
+do {
+  echo $j;
+} while ($j < 5);
