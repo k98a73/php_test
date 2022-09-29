@@ -1,35 +1,42 @@
 <?php
 
-$height = 91;
+// foreach
 
-if ($height !== 90) {
-  echo '身長は90cmではありません。';
+$members = [
+  'name' => '本田',
+  'height' => 170,
+  'hobby' => 'サッカー',
+];
+
+// バリューのみ表示
+foreach ($members as $member) {
+  echo $member;
 }
 
-// データが入っているか
-// isset empty is_null
+echo '<br>';
 
-$test = '1';
-
-if (empty($test)) {
-  echo '変数は空です。';
-} else {
-  echo '変数は空ではありません。';
+// キーとバリューそれぞれ表示
+foreach ($members as $key => $value) {
+  echo $key . 'は' . $value . 'です。';
 }
 
-// AND と OR
+echo '<br>';
 
-$signal_1 = 'red';
-$signal_2 = 'yellow';
+$members_2 = [
+  '本田' => [
+    'height' => 170,
+    'hobby' => 'サッカー',
+  ],
+  '香川' => [
+    'height' => 165,
+    'hobby' => 'サッカー',
+  ],
+];
 
-if ($signal_1 === 'red' || $signal_2 === 'blue') {
-  echo '赤です。';
+// 多段階の配列を展開
+foreach ($members_2 as $member_1) {
+  foreach ($member_1 as $member => $value) {
+    echo $member . 'は' . $value . 'です。';
+    echo '<br>';
+  }
 }
-
-// 三項演算子
-
-$math = 80;
-
-$comment = $math > 80 ? 'good' : 'not good';
-
-echo $comment;
