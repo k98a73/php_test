@@ -1,19 +1,14 @@
 <?php
 
-// snakeCase
-// check_postal_code();
+$globalVariable = 'グローバル変数です';
 
-$postalCode = '123-45678';
-
-// camelCase
-function checkPostalCode($str) {
-  $replaced = str_replace('-', '', $str);
-  $length = strlen($replaced);
-
-  var_dump($length);
-  if ($length === 7) {
-    return true;
-  }
-  return false;
+function checkScope($str) {
+  $localVariable = 'ローカル変数です';
+  // global $globalVariable;
+  echo $str;
 }
-var_dump(checkPostalCode($postalCode));
+
+echo $globalVariable;
+echo '<br>';
+echo $localVariable;
+checkScope($globalVariable);
