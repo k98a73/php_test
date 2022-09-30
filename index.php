@@ -1,49 +1,17 @@
 <?php
+// 文字列の長さ
 
-// インプット引数 なし
-// アウトプット戻り値 なし
-function test() {
-  echo 'テスト';
-}
+// マルチバイト
+// 日本語 SJIS(昔), UTF-8(主流) 3〜6バイト
+$text = 'あいうえお';
+// echo strlen($text);
 
-test();
-
-// インプット引数 あり
-// アウトプット戻り値 なし
-
-$comment = 'コメント2';
-$comment3 = 'コメント3';
-
-function getComment($string) {
-  echo $string;
-}
-
-getComment($comment3);
+echo mb_strlen($text);
 
 echo '<br>';
 
-// インプット引数 なし
-// アウトプット戻り値 あり
+// 文字列の置換
 
-function getNumberOfComment() {
-  return 5;
-}
+$str = '文字列を置換します';
 
-$commentNumber = getNumberOfComment();
-
-// echo getNumberOfComment();
-
-echo $commentNumber;
-
-echo '<br>';
-
-// 引数2つ
-// 戻り値あり
-
-function sumPrice($int1, $int2) {
-  $int3 = $int1 + $int2;
-  return $int3;
-}
-
-$total = sumPrice(3, 5);
-echo $total;
+echo str_replace('置換', 'ちかん', $str);
