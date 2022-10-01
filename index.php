@@ -1,14 +1,13 @@
 <?php
 
-$globalVariable = 'グローバル変数です';
+require __DIR__ . '/common/common.php';
 
-function checkScope($str) {
-  $localVariable = 'ローカル変数です';
-  // global $globalVariable;
-  echo $str;
-}
+echo $commonVariable;
 
-echo $globalVariable;
 echo '<br>';
-echo $localVariable;
-checkScope($globalVariable);
+
+commonTest();
+
+echo '<br>';
+
+echo __FILE__;
