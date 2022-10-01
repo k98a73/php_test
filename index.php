@@ -1,6 +1,9 @@
 <?php
 
-// $test = 123;
-echo $test;
+$test = 123;
+$test_2 = 456;
 
-phpinfo();
+echo $test;
+var_dump($test);
+exit();
+echo $test_2;
