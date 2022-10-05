@@ -2,6 +2,8 @@
 
 session_start();
 
+require 'validation.php';
+
 header('X-FRAME-OPTIONS:DENY');
 
 if (!empty($_POST)) {
@@ -16,8 +18,9 @@ function h($str) {
 
 // 入力、確認、完了のページを1つのファイルで切り分けるための変数
 $pageFlag = 0;
+$errors = validation($_POST);
 
-if (!empty($_POST['btn_confirm'])) {
+if (!empty($_POST['btn_confirm']) && empty($errors)) {
   $pageFlag = 1;
 }
 if (!empty($_POST['btn_submit'])) {
@@ -40,6 +43,15 @@ if (!empty($_POST['btn_submit'])) {
     }
     $token = $_SESSION['csrfToken'];
     ?>
+
+    <?php if (!empty($errors) && !empty($_POST['btn_confirm'])): ?>
+      <?php echo '<ul>'; ?>
+      <?php foreach ($errors as $error) {
+        echo '<li>' . $error . '</li>';
+      } ?>
+      <?php echo '</ul>'; ?>
+    <?php endif; ?>
+
     <form method="POST" action="input.php">
       氏名
       <input type="text" name="your_name" value="<?php if (
