@@ -1,8 +1,22 @@
 <?php
-// パスワードを記録したファイルの場所
-echo __FILE__;
-// /Applications/MAMP/htdocs/php_test/mainte/test.php
 
-echo '<br>';
-// パスワード（暗号化）
-echo password_hash('password123', PASSWORD_BCRYPT);
+$contactFile = '.contact.dat';
+
+$fileContents = file_get_contents($contactFile);
+
+// echo $fileContents;
+
+// file_put_contents($contactFile, 'テストです');
+
+// $addText = 'テストです' . "\n";
+
+// file_put_contents($contactFile, $addText, FILE_APPEND);
+
+$allDdata = file($contactFile);
+
+foreach ($allDdata as $lineData) {
+  $lines = explode(',', $lineData);
+  echo $lines[0] . '<br>';
+  echo $lines[1] . '<br>';
+  echo $lines[2] . '<br>';
+}
