@@ -247,8 +247,10 @@ if (!empty($_POST['btn_submit'])) {
 
   <?php if ($pageFlag === 2): ?>
     <?php if ($_POST['csrf'] === $_SESSION['csrfToken']): ?>
-      // DB接続
-      // DB保存
+      <?php
+      require '../mainte/insert.php';
+      insertContact($_POST);
+      ?>
       送信が完了しました
       <?php unset($_SESSION['csrfToken']); ?>
     <?php endif; ?>
